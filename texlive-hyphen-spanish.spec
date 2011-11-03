@@ -1,3 +1,9 @@
+# revision 23092
+# category TLCore
+# catalog-ctan /language/spanish/hyphen/base
+# catalog-date 2009-08-01 23:35:18 +0200
+# catalog-license lppl
+# catalog-version 4.5
 Name:		texlive-hyphen-spanish
 Version:	4.5
 Release:	1
@@ -46,6 +52,7 @@ Hyphenation patterns for Spanish in T1/EC and UTF-8 encodings.
 %_texmf_language_dat_d/hyphen-spanish
 %_texmf_language_def_d/hyphen-spanish
 %_texmf_language_lua_d/hyphen-spanish
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -54,6 +61,8 @@ Hyphenation patterns for Spanish in T1/EC and UTF-8 encodings.
 %build
 
 %install
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
 mkdir -p %{buildroot}%{_texmf_language_dat_d}
 cat > %{buildroot}%{_texmf_language_dat_d}/hyphen-spanish <<EOF
 %% from hyphen-spanish:
