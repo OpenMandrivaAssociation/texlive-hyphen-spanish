@@ -44,13 +44,13 @@ Hyphenation patterns for Spanish in T1/EC and UTF-8 encodings.
 %install
 mkdir -p %{buildroot}%{_texmf_language_dat_d}
 cat > %{buildroot}%{_texmf_language_dat_d}/hyphen-spanish <<EOF
-%% from hyphen-spanish:
+\%\% from hyphen-spanish:
 spanish loadhyph-es.tex
 =espanol
 EOF
 mkdir -p %{buildroot}%{_texmf_language_def_d}
 cat > %{buildroot}%{_texmf_language_def_d}/hyphen-spanish <<EOF
-%% from hyphen-spanish:
+\%\% from hyphen-spanish:
 \addlanguage{spanish}{loadhyph-es.tex}{}{2}{2}
 \addlanguage{espanol}{loadhyph-es.tex}{}{2}{2}
 EOF
