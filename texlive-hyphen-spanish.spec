@@ -6,7 +6,7 @@
 # catalog-version 4.5
 Name:		texlive-hyphen-spanish
 Version:	4.5
-Release:	2
+Release:	3
 Summary:	Spanish hyphenation patterns
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/language/spanish/hyphen/base
@@ -44,16 +44,18 @@ Hyphenation patterns for Spanish in T1/EC and UTF-8 encodings.
 %install
 mkdir -p %{buildroot}%{_texmf_language_dat_d}
 cat > %{buildroot}%{_texmf_language_dat_d}/hyphen-spanish <<EOF
-\%\% from hyphen-spanish:
+\%% from hyphen-spanish:
 spanish loadhyph-es.tex
 =espanol
 EOF
+perl -pi -e 's|\\%%|%%|;' %{buildroot}%{_texmf_language_dat_d}/hyphen-spanish
 mkdir -p %{buildroot}%{_texmf_language_def_d}
 cat > %{buildroot}%{_texmf_language_def_d}/hyphen-spanish <<EOF
-\%\% from hyphen-spanish:
+\%% from hyphen-spanish:
 \addlanguage{spanish}{loadhyph-es.tex}{}{2}{2}
 \addlanguage{espanol}{loadhyph-es.tex}{}{2}{2}
 EOF
+perl -pi -e 's|\\%%|%%|;' %{buildroot}%{_texmf_language_def_d}/hyphen-spanish
 mkdir -p %{buildroot}%{_texmf_language_lua_d}
 cat > %{buildroot}%{_texmf_language_lua_d}/hyphen-spanish <<EOF
 -- from hyphen-spanish:
