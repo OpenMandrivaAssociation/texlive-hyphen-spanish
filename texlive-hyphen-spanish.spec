@@ -1,4 +1,4 @@
-# revision 23092
+# revision 25990
 # category TLCore
 # catalog-ctan /language/spanish/hyphen/base
 # catalog-date 2009-08-01 23:35:18 +0200
@@ -6,7 +6,7 @@
 # catalog-version 4.5
 Name:		texlive-hyphen-spanish
 Version:	4.5
-Release:	3
+Release:	4
 Summary:	Spanish hyphenation patterns
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/language/spanish/hyphen/base
