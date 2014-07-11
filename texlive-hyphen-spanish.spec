@@ -6,7 +6,7 @@
 # catalog-version 4.5
 Name:		texlive-hyphen-spanish
 Version:	4.5
-Release:	9
+Release:	10
 Summary:	Spanish hyphenation patterns
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/language/spanish/hyphen/base
