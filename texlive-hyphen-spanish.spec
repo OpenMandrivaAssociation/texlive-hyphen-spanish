@@ -1,6 +1,6 @@
 Name:		texlive-hyphen-spanish
-Version:	20180303
-Release:	2
+Version:	4.5
+Release:	1
 Summary:	Spanish hyphenation patterns
 Group:		Publishing
 License:	LPPL
