@@ -1,5 +1,5 @@
 Name:		texlive-hyphen-spanish
-Version:	73410
+Version:	75447
 Release:	1
 Summary:	Spanish hyphenation patterns
 Group:		Publishing
