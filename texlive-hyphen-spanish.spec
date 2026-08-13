@@ -1,9 +1,10 @@
 %global tl_name hyphen-spanish
 %global tl_revision 78069
+%global tl_version 5.0
 
 Name:		texlive-%{tl_name}
 Epoch:		1
-Version:	5.0
+Version:	%{tl_version}
 Release:	%{tl_revision}.1
 Summary:	Spanish hyphenation patterns.
 Group:		Publishing
@@ -16,8 +17,34 @@ BuildArch:	noarch
 BuildSystem:	texlive
 Requires:	texlive(hyph-utf8)
 Requires:	texlive(hyphen-base)
-Provides:	texlive(%{tl_name}) = %{tl_revision}
+Requires:	texlive-tlpkg
+Provides:	texlive(%{tl_name}) = %{version}
 
 %description
 Hyphenation patterns for Spanish in T1/EC and UTF-8 encodings.
 
+
+%install -a
+mkdir -p %{buildroot}%{_texmf_language_dat_d}
+cat > %{buildroot}%{_texmf_language_dat_d}/%{tl_name} <<'TL_HYPHEN_EOF'
+% from hyphen-spanish:
+spanish loadhyph-es.tex
+=espanol
+TL_HYPHEN_EOF
+mkdir -p %{buildroot}%{_texmf_language_def_d}
+cat > %{buildroot}%{_texmf_language_def_d}/%{tl_name} <<'TL_HYPHEN_EOF'
+% from hyphen-spanish:
+\addlanguage{spanish}{loadhyph-es.tex}{}{2}{2}
+\addlanguage{espanol}{loadhyph-es.tex}{}{2}{2}
+TL_HYPHEN_EOF
+mkdir -p %{buildroot}%{_texmf_language_lua_d}
+cat > %{buildroot}%{_texmf_language_lua_d}/%{tl_name} <<'TL_HYPHEN_EOF'
+-- from hyphen-spanish:
+['spanish'] = {
+	loader = 'loadhyph-es.tex',
+	lefthyphenmin = 2,
+	righthyphenmin = 2,
+	synonyms = { 'espanol' },
+	patterns = 'hyph-es.pat.txt',
+},
+TL_HYPHEN_EOF
