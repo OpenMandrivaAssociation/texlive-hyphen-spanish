@@ -5,7 +5,7 @@
 Name:		texlive-%{tl_name}
 Epoch:		1
 Version:	%{tl_version}
-Release:	%{tl_revision}.1
+Release:	%{tl_revision}.2
 Summary:	Spanish hyphenation patterns.
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/language/spanish/hyphen-spanish
